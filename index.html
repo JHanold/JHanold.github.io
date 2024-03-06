@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Portfolio</title>
+<title>Jaden Hanold</title>
 <style>
     body {
         font-family: 'Arial', sans-serif;
@@ -35,6 +35,13 @@
     }
     .main {
         padding: 20px;
+        background-image: url('abstractbackground.webp');
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .overlay {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
     }
     .card {
         background: white;
@@ -56,48 +63,59 @@
 <body>
 
 <div class="header">
-    <h1>Welcome to My Portfolio</h1>
-    <p>Projects & Blog</p>
+    <h1>Welcome to My World!</h1>
+    <p>Projects & Achievements</p>
 </div>
 
 <div class="navigation">
+    <a href="#about">About</a>
     <a href="#projects">Projects</a>
-    <a href="#blog">Blog</a>
     <a href="#contact">Contact</a>
 </div>
 
 <div class="main">
-    <section id="projects">
-        <h2>My Projects</h2>
-        <!-- Project cards will go here -->
-        <div class="card">
-            <h3>Project Title</h3>
-            <p>Project description...</p>
-            <a href="#">View Project</a>
-        </div>
-        <!-- Repeat for each project -->
-    </section>
+    <div class="overlay">
+        <section id="about">
+            <h2>About Me</h2>
+            <!-- Blog posts will go here -->
+            <div class="card">
+                <p>I am a senior computer engineer at MSU...</p>
+                <a href="#">Fun Pictures!</a>
+            </div>
+            <!-- Repeat for each blog post -->
+        </section>
+        
+        <section id="projects">
+            <h2>My Projects</h2>
+            <!-- Project cards will go here -->
+            <div class="card">
+                <h3>Harold's Incredible Machines</h3>
+                <p>A fun game</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Project Title 2</h3>
+                <p>Project description...</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Project Title 3</h3>
+                <p>Project description...</p>
+                <a href="#">View Project</a>
+            </div>
+            <!-- Repeat for each project -->
+        </section>
 
-    <section id="blog">
-        <h2>Blog</h2>
-        <!-- Blog posts will go here -->
-        <div class="card">
-            <h3>Blog Post Title</h3>
-            <p>Blog post summary...</p>
-            <a href="#">Read More</a>
-        </div>
-        <!-- Repeat for each blog post -->
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <!-- Contact form or details -->
-        <p>Email: your.email@example.com</p>
-    </section>
+        <section id="contact">
+            <h2>Connect with me on LinkedIn!</h2>
+            <!-- Contact form or details -->
+            <p>www.linkedin.com/in/jaden-hanold</p>
+        </section>
+    </div>
 </div>
 
 <div class="footer">
-    <p>&copy; 2024 Your Name</p>
+    <p>&copy; 2024 Jaden Hanold</p>
 </div>
 
 </body>
