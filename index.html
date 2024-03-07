@@ -60,6 +60,45 @@
         bottom: 0;
         width: 100%;
     }
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+
+    .dropbtn {
+        display: block;
+        color: white;
+        padding: 14px 16px;
+        border: none;
+        cursor: pointer;
+        background-color: inherit;
+        font-family: inherit; /* Optional: Use the same font as the rest of the navbar */
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content div {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
 </style>
 </head>
 <body>
@@ -75,6 +114,12 @@
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Last Commit</button>
+        <div class="dropdown-content" id="commit-info">Loading...</div>
+    </div>
+
 </div>
 
 <div class="main">
@@ -147,6 +192,18 @@
 <div class="footer">
     <p>&copy; 2024 Jaden Hanold</p>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('https://api.github.com/repos/JHanold/JHanold.github.io/commits')
+        .then(response => response.json())
+        .then(commits => {
+            var lastCommitDate = new Date(commits[0].commit.committer.date);
+            document.getElementById('commit-info').innerText = 'Last updated: ' + lastCommitDate.toLocaleDateString();
+        })
+        .catch(error => console.log('Error:', error));
+});
+</script>
 
 </body>
 </html>
